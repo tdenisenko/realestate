@@ -1,10 +1,9 @@
 {
-  "name": "angular-phonecat",
+  "name": "realestate",
   "private": true,
-  "version": "0.0.0",
-  "description": "A tutorial application for AngularJS",
-  "repository": "https://github.com/angular/angular-phonecat",
-  "license": "MIT",
+  "version": "0.0.1",
+  "description": "Real Estate Web Page for Wish Won",
+  "repository": "https://github.com/tdenisenko/realestate",
   "devDependencies": {
     "bower": "^1.7.7",
     "http-server": "^0.9.0",
