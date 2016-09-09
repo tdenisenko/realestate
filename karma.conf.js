@@ -7,6 +7,8 @@ module.exports = function(config) {
     files: [
       'bower_components/angular/angular.js',
       'bower_components/angular-mocks/angular-mocks.js',
+      'http://maps.google.com/maps/api/js',
+      'bower_components/ngmap/build/scripts/ng-map.min.js',
       '**/*.module.js',
       '*!(.module|.spec).js',
       '!(bower_components)/**/*!(.module|.spec).js',

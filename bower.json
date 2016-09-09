@@ -6,6 +6,7 @@
   "dependencies": {
     "angular": "1.5.x",
     "angular-mocks": "1.5.x",
-    "bootstrap": "3.3.x"
+    "bootstrap": "3.3.x",
+    "ngmap": "1.17.6"
   }
 }

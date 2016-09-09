@@ -1,0 +1,47 @@
+{
+    "type": "FeatureCollection", 
+    "features": [
+        {
+            "id": 103859, 
+            "type": "Feature", 
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -2.12505523633, 
+                    52.4496949696
+                ]
+            }, 
+            "properties": {
+                "name": "Pedmore Technology College and Community School"
+            }
+        }, 
+        {
+            "id": 103881, 
+            "type": "Feature", 
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -2.02691111179, 
+                    52.4670118231
+                ]
+            }, 
+            "properties": {
+                "name": "Halesbury School"
+            }
+        }, 
+        {
+            "id": 131547, 
+            "type": "Feature", 
+            "geometry": {
+                "type": "Point", 
+                "coordinates": [
+                    -2.1829430337, 
+                    52.5976646351
+                ]
+            }, 
+            "properties": {
+                "name": "The King's Church of England School"
+            }
+        }
+    ]
+}
