@@ -1,11 +1,16 @@
+* {
+    font-family: "Open Sans",open-sans,Arial,"Helvetica Neue",sans-serif;
+}
+
 .container {
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%; 
-    margin: 0;
-    margin-top: -20px;
+    margin: 0 auto;
+    min-width: 500px;
+    /*margin-top: -20px;*/
 }
 .header {
     width: 100%;
@@ -18,14 +23,149 @@
     height: 90%;
     overflow: hidden;
 }
-.map-container {
+
+.details-container-left {
     float: left;
-    width: 60%;
     height: 100%;
+    width: 50%;
 }
+
+.details-container-right {
+    float: right;
+    height: 100%;
+    width: 50%;
+}
+
 .details-container {
     float: right;
-    width: 40%;
+    width: 390px;
     height: 100%;
-    background: red;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.map-container {
+    float: left;
+    height: 100%;
+}
+
+.details-header {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.details-image {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    height: 210px;
+    margin-bottom: 3px;
+    background-size: cover;
+    /*background-image: linear-gradient(
+      rgba(0, 0, 0, 0), 
+      rgba(0, 0, 0, 0.25)
+    ), url("img/house.jpg");*/
+    background-position: center;
+}
+
+.details-text {
+    position: relative;
+    top: 60%;
+    height: 30%;
+    width: 90%;
+    padding-left: 15px;
+    padding-right: 15px;
+    /*margin-top: -120px;*/
+    color: white;
+    z-index: 2;
+    position: relative;
+}
+
+.details-text .condoname {
+    height: 65%;
+    line-height: 1.5;
+}
+
+.details-text .condoname p {
+    margin: 0;
+    font-size: 28px;
+    text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+}
+.details-text .condolocation {
+    height: 35%;
+    line-height: 1;
+    color: #ccc;
+}
+
+.details-text .condolocation p {
+    margin: 0;
+    font-size: 13px;
+    text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+}
+
+.image-container {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media only screen and (min-width: 768px) {
+    .details-container { 
+        display: none;
+    }
+    .map-container {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1007px) {
+    .details-container { 
+        display: initial;
+    }
+    .details-container-left {
+        width: 100%;
+    }
+    .details-container-right {
+        width: 0%;
+    }
+    .map-container {
+        width: calc(100% - 390px);
+    }
+    .details-image {
+        margin: initial;
+        padding: initial;
+        width: initial;
+    }
+} 
+
+@media screen and (min-width: 1280px) {
+    .details-container { 
+        display: initial;
+        width: 640px;
+    }
+    .details-container-left {
+        width: 50%;
+    }
+    .details-container-right {
+        width: 50%;
+    }
+    .map-container {
+        width: calc(100% - 640px);
+    }
+    .details-image {
+        margin-bottom: 8px;
+        width: 96%;
+        margin-left: 2%;
+    }
 }
