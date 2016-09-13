@@ -10,7 +10,7 @@
     .directive('backImg', backImg);
 
   myController.$inject = ['$scope', 'condoApi'];
-  mapCtrl.$inject = ['$scope', 'NgMap', 'condoApi'];
+  mapCtrl.$inject = ['$scope', 'NgMap', 'condoApi', '$compile'];
   condoApi.$inject = ['$q', '$http'];
 
   //Temporary dummy controller
@@ -33,7 +33,7 @@
     }
 
   //Main controller for map and details
-  function mapCtrl($scope, NgMap, condoApi) {
+  function mapCtrl($scope, NgMap, condoApi, $compile) {
     $scope.googleMapsUrl='https://maps.googleapis.com/maps/api/js?key=AIzaSyC9efZV5sak_Geyb6y7UMSfAaNt7fFUcfM';
 
     condoApi.getImageList().then(function(imageList) {
@@ -77,15 +77,55 @@
           var markers = [];
           var marker = new google.maps.Marker({
             //id: info.id,
-            icon: 'https://www.google.com/intl/en_us/mapfiles/ms/icons/yellow.png', //icon: $scope.image,
+            icon: 'img/rent3.gif', //icon: 'https://www.google.com/intl/en_us/mapfiles/ms/icons/yellow.png', //icon: $scope.image,
             position: new google.maps.LatLng(info.lat, info.lng),
             map: ctrl.map,
             title: info.name_en
           });
-          google.maps.event.addListener(marker, 'click', function(){
+          var infowindow =  new google.maps.InfoWindow({
+            content: '',
+            maxWidth: 170,
+            maxHeight: 115
+          });
+          google.maps.event.addListener(marker, 'mouseover', function(){ //'click'
                 $scope.name = info.name_en;
                 $scope.location = info.location;
+                $scope.activeImage = 'img/house.jpg';
+                var source = '<div>'
+                            + '<div class="info-container">'
+                              + '<div class="row">'
+                                + '<div class="col-xs-5 small-img-container">'
+                                  + '<img ng-src="{{activeImage}}"></img>'
+                                + '</div>'
+                                + '<div class="col-xs-7 small-details-container">'
+                                  + '<div class="row">'
+                                    + '<div class="col-xs-12 condopricesmall">'
+                                      + '$900/mo'
+                                    + '</div>'
+                                  + '</div>'
+                                  + '<div class="row">'
+                                    + '<div class="col-xs-12 condonamesmall">'
+                                      + '{{name}}'
+                                    + '</div>'
+                                  + '</div>'
+                                  + '<div class="row">'
+                                    + '<div class="col-xs-12 condolocationsmall">'
+                                      + '{{location}}'
+                                    + '</div>'
+                                  + '</div>'
+                                + '</div>'
+                              + '</div>'
+                            + '</div>'
+                          + '</div>'
+                var template = angular.element(source);
+                var linkFunction = $compile(template);
+                var result = linkFunction($scope);
                 $scope.$apply();
+                infowindow.setContent(template.html());
+                infowindow.open(ctrl.map, marker);
+          });
+          google.maps.event.addListener(marker, 'mouseout', function(){
+              infowindow.close();
           });
           markers.push(marker);
         }
@@ -103,9 +143,11 @@
       $http.get('https://www.dreamstime.com/photos-images/house-interior.html').then(function(response) {
         var m,
             urls = [], 
-            str = response.data,
-            rex = /<img[^>]+src="?([^"\s]+)"?\s*\/>/g;
+            rex = /<img[^>]+src="?([^"\s]+.jpg)"?\s*\/>/g,
+            str = response.data;
+            
 
+        m = rex.exec( str );
         while ( m = rex.exec( str ) ) {
             urls.push( m[1] );
         }
@@ -140,11 +182,18 @@
 
   //For giving custom background image to a div dynamically
   function backImg(){
-    return function(scope, element, attrs){
+    /*return function(scope, element, attrs){
         var url = attrs.backImg;
         element.css({
             'background-image': 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)), url(' + url + ')',
             'background-size' : 'cover'
+        });
+    };*/
+    return function(scope, element, attrs){
+        attrs.$observe('backImg', function(value) {
+            element.css({
+                'background-image': 'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)), url(' + value + ')'
+            });
         });
     };
   }

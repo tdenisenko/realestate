@@ -1,5 +1,15 @@
 * {
     font-family: "Open Sans",open-sans,Arial,"Helvetica Neue",sans-serif;
+    font-weight: 300;
+}
+
+body, html {
+    overflow: hidden;
+    padding: 0 !important;
+}
+
+body {
+    width: 100% !important;
 }
 
 .container {
@@ -14,13 +24,21 @@
 }
 .header {
     width: 100%;
-    height: 10%;
-    background: blue;
+    height: 100px;
+    background: white;
     overflow-y: auto;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+    z-index: 1;
 }
+
+.logo {
+    height: 100%;
+}
+
 .main-container {
     width: 100%;
-    height: 90%;
+    height: calc(100% - 100px);
     overflow: hidden;
 }
 
@@ -45,8 +63,10 @@
 }
 
 .map-container {
+    position: relative;
     float: left;
     height: 100%;
+    width: calc(100% - 390px);
 }
 
 .details-header {
@@ -58,7 +78,7 @@
     padding-left: 0px;
     padding-right: 0px;
     width: 100%;
-    height: 210px;
+    height: 175px;
     margin-bottom: 3px;
     background-size: cover;
     /*background-image: linear-gradient(
@@ -66,12 +86,13 @@
       rgba(0, 0, 0, 0.25)
     ), url("img/house.jpg");*/
     background-position: center;
+    border: 1px solid #ccc;
 }
 
 .details-text {
     position: relative;
     top: 60%;
-    height: 30%;
+    height: 40%;
     width: 90%;
     padding-left: 15px;
     padding-right: 15px;
@@ -95,6 +116,7 @@
     white-space: nowrap;
     overflow: hidden;
     display: block;
+    height: 100%;
 }
 .details-text .condolocation {
     height: 35%;
@@ -111,13 +133,33 @@
     white-space: nowrap;
     overflow: hidden;
     display: block;
+    height: 100%;
 }
 
-.image-container {
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    padding-left: 15px;
-    padding-right: 15px;
+.map-container:before, .map-container:after/*, .map:before, .map:after*/ {
+    position: absolute;
+    display: block;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
+    content: '';
+    z-index: 5;
+}
+.map-container:before {
+    top: -5px;
+    left: 0;
+    right: 0;
+    height: 5px;
+}
+.map-container:after {
+    right: -1000px;
+    top: 0;
+    bottom: 0;
+    width: 1000px;
+    z-index: 1;
+}
+
+.map {
+    width: inherit;
+    height: inherit;
 }
 
 @media only screen and (min-width: 768px) {
@@ -143,29 +185,83 @@
         width: calc(100% - 390px);
     }
     .details-image {
-        margin: initial;
-        padding: initial;
-        width: initial;
+        margin-bottom: 3px;
+        width: 100%;
     }
 } 
 
 @media screen and (min-width: 1280px) {
     .details-container { 
         display: initial;
-        width: 640px;
+        width: 680px;
     }
     .details-container-left {
+        position: relative;
         width: 50%;
+        left: 1%;
     }
     .details-container-right {
+        position: relative;
         width: 50%;
+        left: 0.5%;
     }
     .map-container {
-        width: calc(100% - 640px);
+        width: calc(100% - 680px);
     }
     .details-image {
-        margin-bottom: 8px;
-        width: 96%;
-        margin-left: 2%;
+        margin-bottom: 7px;
+        width: 96.2%;
+        /*margin-left: 2%;*/
     }
+}
+
+.small-details-container {
+    padding-left: 0px;
+}
+
+.small-details-container * {
+    padding-left: 0px !important;
+}
+
+.info-container * {
+    text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+}
+.small-img-container {
+    height: 54px;
+    overflow: hidden;
+}
+
+.small-img-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.gm-style-iw + div {
+    display: none;
+}
+
+.gm-style-iw + div + img {
+    display: none;
+}
+
+.gm-style-iw {
+    left: 10px !important;
+    top: 10px !important;
+}
+
+.gm-style-iw * {
+    overflow: hidden;
+}
+
+.condopricesmall {
+    font-weight: bold;
+}
+
+.condopricesmall, .condonamesmall, .condolocationsmall {
 }
