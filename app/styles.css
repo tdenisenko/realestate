@@ -90,6 +90,21 @@ body {
 .searchbar {
     border-right: 1px solid rgba(55, 55, 55, 0.25);
     padding: 0 !important;
+    min-width: 150px;
+    max-width: 250px;
+}
+
+.listing-type {
+    min-width: 136px;
+    max-width: 136px;
+}
+
+.search-by {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    min-width: 260px;
+    max-width: 260px;
+    cursor: auto;
 }
 
 .menuitem {
@@ -99,6 +114,17 @@ body {
 
 .menuitem:first-child {
     padding-top: 7px;
+}
+
+.header-img {
+    height: 100%;
+    margin-left: 10px;
+    border: 2px solid cyan;
+    cursor: pointer;
+}
+
+.header-img:hover {
+    border: 2px solid pink;
 }
 
 /*.lower-half:before {

@@ -9,6 +9,7 @@
     <script src="https://googlemaps.github.io/js-marker-clusterer/src/markerclusterer.js"></script>
     <script src="https://googlemaps.github.io/js-map-label/src/maplabel-compiled.js"></script>
     <script src="bower_components/ngmap/build/scripts/ng-map.min.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
     <!-- <script src="https://rawgit.com/allenhwkim/angularjs-google-maps/master/build/scripts/ng-map.min.js"></script> -->
     <script src="app.js"></script>
 
@@ -33,14 +34,14 @@
             <div class="col-xs-2 searchbar">
               <form class="navbar-form" role="search">
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term" autocomplete="off" ng-model="searchText" uib-typeahead="station.title for station in allStations | filter:$viewValue | limitTo:8">
                 <div class="input-group-btn">
-                  <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                  <button class="btn btn-default" type="submit" ng-click="search(searchText)"><i class="glyphicon glyphicon-search"></i></button>
                 </div>
               </div>
               </form>
             </div>
-            <div class="col-xs-2 header-tab" id="simple-dropdown" auto-close="outsideClick" uib-dropdown-toggle uib-dropdown dropdown-append-to-body="true">
+            <div class="col-xs-2 header-tab listing-type" id="simple-dropdown" auto-close="outsideClick" uib-dropdown-toggle uib-dropdown dropdown-append-to-body="true">
               LISTING TYPE <span class="caret"></span>
               <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
                 <li class="menuitem" role="menuitem"><label><input type="checkbox" ng-model="listingOptions.isForSale" ng-change="listingFilterChanged(listingOptions, 'sale')"> FOR SALE {{saleCount === 0 ? '' : '(' + saleCount + ')'}}</label></li>
@@ -48,11 +49,8 @@
                 <!-- <li class="divider"></li> -->
               </ul>
             </div>
-            <div class="col-xs-2 header-tab" id="simple-dropdown" auto-close="outsideClick" uib-dropdown-toggle uib-dropdown dropdown-append-to-body="true">
-              ANY PRICE <span class="caret"></span>
-              <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
-                <!-- <li class="divider"></li> -->
-              </ul>
+            <div class="col-xs-3 header-tab search-by">
+              SEARCH BY <span><img class="header-img" src="img/bts.jpg" ng-click="zoomTo('bts')"></img></span> <span><img class="header-img" src="img/mrt.png" ng-click="zoomTo('mrt')"></img></span> <span><img class="header-img" src="img/arl.jpg" ng-click="zoomTo('arl')"></img></span>
             </div>
             <div class="col-xs-2 header-tab" id="simple-dropdown" auto-close="outsideClick" uib-dropdown-toggle uib-dropdown dropdown-append-to-body="true">
               0+ BEDS <span class="caret"></span>
@@ -62,12 +60,6 @@
             </div>
             <div class="col-xs-2 header-tab" id="simple-dropdown" auto-close="outsideClick" uib-dropdown-toggle uib-dropdown dropdown-append-to-body="true">
               HOME TYPE <span class="caret"></span>
-              <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
-                <!-- <li class="divider"></li> -->
-              </ul>
-            </div>
-            <div class="col-xs-2 header-tab" id="simple-dropdown" auto-close="outsideClick" uib-dropdown-toggle uib-dropdown dropdown-append-to-body="true">
-              MORE <span class="caret"></span>
               <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
                 <!-- <li class="divider"></li> -->
               </ul>
