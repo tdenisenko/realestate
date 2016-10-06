@@ -834,7 +834,7 @@
       .concat($scope.mrtStationsCoords)
       .concat($scope.srtStationsCoords);
       arrayUnique($scope.allStations);
-      $scope.search = function (searchText) {
+      /*$scope.search = function (searchText) {
         if (!searchText || searchText === '') {
           return;
         }
@@ -847,7 +847,7 @@
           smoothZoom(ctrl.map, 18, level);
         }
         $timeout(center).then(zoom);
-      };
+      };*/
       $scope.listingFilterChanged = function(listingOptions, type) {
         loading();
         if (!listingOptions.isForRent && !listingOptions.isForSale) {
@@ -929,6 +929,9 @@
     var ctrl = this;
     var mc = null;
 
+    var input = document.getElementById('srch-term');
+    var searchBox = new google.maps.places.SearchBox(input);
+
     NgMap.getMap().then(function(map){
       ctrl.map = map;
       /*generateBtsMarkers($scope.btsStationsCoords1, 'img/pin-for-bts.png');
@@ -936,12 +939,15 @@
       generateBtsMarkers($scope.srtStationsCoords, 'img/pin-for-arl.png');
       generateBtsMarkers($scope.mrtStationsCoords, 'img/pin-for-arl.png');
       generateBtsMarkers($scope.brtStationsCoords, 'img/pin-for-bts.png');*/
+      
+      //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
       var timeout = $timeout(setMap).then(loading);
       var status = 'undone';
       ctrl.map.addListener('bounds_changed', function() {
         //loading sign for details here
         if (status === 'undone') {
           $timeout(loading);
+          searchBox.setBounds(ctrl.map.getBounds());
           timeout = $timeout(setMap, 1000);
           status = 'done';
           timeout.then(function() {
@@ -949,6 +955,29 @@
             $timeout(loading);
           });
         }
+      });
+      searchBox.addListener('places_changed', function() {
+        var places = searchBox.getPlaces();
+
+        if (places.length == 0) {
+          return;
+        }
+
+        // For each place, get the icon, name and location.
+        var bounds = new google.maps.LatLngBounds();
+        places.forEach(function(place) {
+          if (!place.geometry) {
+            return;
+          }
+
+          if (place.geometry.viewport) {
+            // Only geocodes have viewport.
+            bounds.union(place.geometry.viewport);
+          } else {
+            bounds.extend(place.geometry.location);
+          }
+        });
+        map.fitBounds(bounds);
       });
     });
 

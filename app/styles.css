@@ -90,8 +90,8 @@ body {
 .searchbar {
     border-right: 1px solid rgba(55, 55, 55, 0.25);
     padding: 0 !important;
-    min-width: 150px;
-    max-width: 250px;
+    min-width: 200px;
+    max-width: 300px;
 }
 
 .listing-type {
@@ -177,6 +177,14 @@ body {
 .details-header {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.filter {
+    text-align: center;
+}
+
+.filterlabel {
+    text-align: left;
 }
 
 .details-image {
