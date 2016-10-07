@@ -147,17 +147,17 @@
           lng: 100.541229
         },
         {
-          title: 'Sanam Pao',        
+          title: 'Sanam Pao Station',        
           lat: 13.772369,
           lng: 100.542031
         },
         {
-          title: 'Ari',        
+          title: 'Ari Station',        
           lat: 13.779785,
           lng: 100.544700
         },
         {
-          title: 'Saphan Khwai',        
+          title: 'Saphan Khwai Station',        
           lat: 13.793650,
           lng: 100.549688
         },
@@ -166,19 +166,19 @@
           lng: 100.551398
         },
         {
-          title: 'Mo Chit',        
+          title: 'Mo Chit Station',        
           lat: 13.802442,
           lng: 100.553753
         }
       ];
       $scope.btsCoords2 = [
         {
-          title: 'National Stadium',        
+          title: 'National Stadium Station',        
           lat: 13.74651351788079,
           lng: 100.52910804748535
         },
         {
-          title: 'Siam',        
+          title: 'Siam Station',        
           lat: 13.745513049345915,
           lng: 100.53455829620361
         },
@@ -187,7 +187,7 @@
           lng: 100.540383
         },
         {
-          title: 'Ratchadamri',        
+          title: 'Ratchadamri Station',        
           lat: 13.739339,
           lng: 100.539484
         },
@@ -200,7 +200,7 @@
           lng: 100.536702
         },
         { 
-          title: 'Sala Daeng',        
+          title: 'Sala Daeng Station',        
           lat: 13.728519,
           lng: 100.534343
         },
@@ -209,7 +209,7 @@
           lng: 100.528149
         },
         {
-          title: 'Chong Nonsi',        
+          title: 'Chong Nonsi Station',        
           lat: 13.723725,
           lng: 100.529477
         },
@@ -218,7 +218,7 @@
           lng: 100.530242
         },
         {
-          title: 'Surasak',        
+          title: 'Surasak Station',        
           lat: 13.719281,
           lng: 100.521616
         },
@@ -227,7 +227,7 @@
           lng: 100.517160
         },
         {
-          title: 'Saphan Taksin',        
+          title: 'Saphan Taksin Station',        
           lat: 13.718752,
           lng: 100.514146
         },
@@ -236,22 +236,22 @@
           lng: 100.505685
         },
         {
-          title: 'Krung Thon Buri',        
+          title: 'Krung Thon Buri Station',        
           lat: 13.720894,
           lng: 100.502900
         },
         {
-          title: 'Wongwian Yai',        
+          title: 'Wongwian Yai Station',        
           lat: 13.721020,
           lng: 100.495298
         },
         {
-          title: 'Pho Nimit',        
+          title: 'Pho Nimit Station',        
           lat: 13.719192,
           lng: 100.485934
         },
         {
-          title: 'Talat Phlu',        
+          title: 'Talat Phlu Station',        
           lat: 13.714247,
           lng: 100.476719
         },
@@ -260,7 +260,7 @@
           lng: 100.472610
         },
         {
-          title: 'Wutthakat',        
+          title: 'Wutthakat Station',        
           lat: 13.713094,
           lng: 100.468717
         },
@@ -277,203 +277,203 @@
           lng: 100.458428
         },
         {
-          title: 'Bang Wa',        
+          title: 'Bang Wa Station',        
           lat: 13.720698,
           lng: 100.457803
         }
       ];
       $scope.btsStationsCoords1 = [
         {
-          title: 'Bearing',
+          title: 'Bearing Station',
           lat: 13.661229108173657,
           lng: 100.60193538665771
         },
         {
-          title: 'Bang Na',        
+          title: 'Bang Na Station',        
           lat: 13.66815141121943,
           lng: 100.60466051101685
         },
         {
-          title: 'Udom Suk',        
+          title: 'Udom Suk Station',        
           lat: 13.679931368972557,
           lng: 100.60957431793213
         },
         {
-          title: 'Punnawithi',        
+          title: 'Punnawithi Station',        
           lat: 13.689313214516257,
           lng: 100.60901641845703
         },
         {
-          title: 'Bang Chak',        
+          title: 'Bang Chak Station',        
           lat: 13.696651641782516,
           lng: 100.60549736022949
         },
         {
-          title: 'On Nut',        
+          title: 'On Nut Station',        
           lat: 13.705574193616373,
           lng: 100.60103416442871
         },
         {
-          title: 'Phra Khanong',        
+          title: 'Phra Khanong Station',        
           lat: 13.715246857655304,
           lng: 100.59120655059814
         },
         {
-          title: 'Ekkamai',        
+          title: 'Ekkamai Station',        
           lat: 13.71958275011919,
           lng: 100.58524131774902
         },
         {
-          title: 'Thong Lo',        
+          title: 'Thong Lo Station',        
           lat: 13.724252083187412,
           lng: 100.57863235473633
         },
         {
-          title: 'Phrom Phong',        
+          title: 'Phrom Phong Station',        
           lat: 13.730463819728453,
           lng: 100.56970596313477
         },
         {
-          title: 'Asok',        
+          title: 'Asok Station',        
           lat: 13.737008894291328,
           lng: 100.56035041809082
         },
         {
-          title: 'Nana',        
+          title: 'Nana Station',        
           lat: 13.740552329741211,
           lng: 100.55541515350342
         },
         {
-          title: 'Phloen Chit',        
+          title: 'Phloen Chit Station',        
           lat: 13.743053546032764,
           lng: 100.5488920211792
         },
         {
-          title: 'Chit Lom',        
+          title: 'Chit Lom Station',        
           lat: 13.744137398132912,
           lng: 100.5430555343628
         },
         {
-          title: 'Siam',        
+          title: 'Siam Station',        
           lat: 13.745513049345915,
           lng: 100.53455829620361
         },
         {
-          title: 'Ratchatewi',        
+          title: 'Ratchatewi Station',        
           lat: 13.751655,
           lng: 100.531568
         },
         {
-          title: 'Phaya Thai',        
+          title: 'Phaya Thai Station',        
           lat: 13.756818,
           lng: 100.533776
         },
         {
-          title: 'Victory Monument',        
+          title: 'Victory Monument Station',        
           lat: 13.762761,
           lng: 100.537079
         },
         {
-          title: 'Sanam Pao',        
+          title: 'Sanam Pao Station',        
           lat: 13.772369,
           lng: 100.542031
         },
         {
-          title: 'Ari',        
+          title: 'Ari Station',        
           lat: 13.779785,
           lng: 100.544700
         },
         {
-          title: 'Saphan Khwai',        
+          title: 'Saphan Khwai Station',        
           lat: 13.793650,
           lng: 100.549688
         },
         {
-          title: 'Mo Chit',        
+          title: 'Mo Chit Station',        
           lat: 13.802442,
           lng: 100.553753
         }
       ];
       $scope.btsStationsCoords2 = [
         {
-          title: 'Bang Wa',        
+          title: 'Bang Wa Station',        
           lat: 13.720698,
           lng: 100.457803
         },
         {
-          title: 'Wutthakat',        
+          title: 'Wutthakat Station',        
           lat: 13.713094,
           lng: 100.468717
         },
         {
-          title: 'Talat Phlu',        
+          title: 'Talat Phlu Station',        
           lat: 13.714247,
           lng: 100.476719
         },
         {
-          title: 'Pho Nimit',        
+          title: 'Pho Nimit Station',        
           lat: 13.719192,
           lng: 100.485934
         },
         {
-          title: 'Wongwian Yai',        
+          title: 'Wongwian Yai Station',        
           lat: 13.721020,
           lng: 100.495298
         },
         {
-          title: 'Krung Thon Buri',        
+          title: 'Krung Thon Buri Station',        
           lat: 13.720894,
           lng: 100.502900
         },
         {
-          title: 'Saphan Taksin',        
+          title: 'Saphan Taksin Station',        
           lat: 13.718752,
           lng: 100.514146
         },
         {
-          title: 'Surasak',        
+          title: 'Surasak Station',        
           lat: 13.719281,
           lng: 100.521616
         },
         {
-          title: 'Chong Nonsi',        
+          title: 'Chong Nonsi Station',        
           lat: 13.723725,
           lng: 100.529477
         },
         {
-          title: 'Sala Daeng',        
+          title: 'Sala Daeng Station',        
           lat: 13.728519,
           lng: 100.534343
         },
         {
-          title: 'Ratchadamri',        
+          title: 'Ratchadamri Station',        
           lat: 13.739339,
           lng: 100.539484
         },
         {
-          title: 'Siam',        
+          title: 'Siam Station',        
           lat: 13.745513049345915,
           lng: 100.53455829620361
         },
         {
-          title: 'National Stadium',        
+          title: 'National Stadium Station',        
           lat: 13.74651351788079,
           lng: 100.52910804748535
         }
       ];
       $scope.srtCoords = [
         {
-          title: 'Phaya Thai',        
+          title: 'Phaya Thai Station',        
           lat: 13.756724,
           lng: 100.534963
         },
         {
-          title: 'Ratchaprarop',        
+          title: 'Ratchaprarop Station',        
           lat: 13.755152,
           lng: 100.541820
         },
         {
-          title: 'Makkasan',        
+          title: 'Makkasan Station',        
           lat: 13.751062,
           lng: 100.561091
         },
@@ -482,17 +482,17 @@
           lng: 100.593614
         },
         {
-          title: 'Ramkhamhaeng',        
+          title: 'Ramkhamhaeng Station',        
           lat: 13.742947,
           lng: 100.600271
         },
         {
-          title: 'Hua Mak',        
+          title: 'Hua Mak Station',        
           lat: 13.737953,
           lng: 100.645332
         },
         {
-          title: 'Ban Thap Chang',        
+          title: 'Ban Thap Chang Station',        
           lat: 13.732838,
           lng: 100.691457
         },
@@ -501,7 +501,7 @@
           lng: 100.739254
         },
         {
-          title: 'Lat Krabang',        
+          title: 'Lat Krabang Station',        
           lat: 13.727753,
           lng: 100.748625
         },
@@ -526,76 +526,76 @@
           lng: 100.757361
         },
         {
-          title: 'Suvarnabhumi',        
+          title: 'Suvarnabhumi Station',        
           lat: 13.698096,
           lng: 100.752254
         }
       ];
       $scope.srtStationsCoords = [
         {
-          title: 'Phaya Thai',        
+          title: 'Phaya Thai Station',        
           lat: 13.756724,
           lng: 100.534963
         },
         {
-          title: 'Ratchaprarop',        
+          title: 'Ratchaprarop Station',        
           lat: 13.755152,
           lng: 100.541820
         },
         {
-          title: 'Makkasan',        
+          title: 'Makkasan Station',        
           lat: 13.751062,
           lng: 100.561091
         },
         {
-          title: 'Ramkhamhaeng',        
+          title: 'Ramkhamhaeng Station',        
           lat: 13.742947,
           lng: 100.600271
         },
         {
-          title: 'Hua Mak',        
+          title: 'Hua Mak Station',        
           lat: 13.737953,
           lng: 100.645332
         },
         {
-          title: 'Ban Thap Chang',        
+          title: 'Ban Thap Chang Station',        
           lat: 13.732838,
           lng: 100.691457
         },
         {
-          title: 'Lat Krabang',        
+          title: 'Lat Krabang Station',        
           lat: 13.727753,
           lng: 100.748625
         },
         {
-          title: 'Suvarnabhumi',        
+          title: 'Suvarnabhumi Station',        
           lat: 13.698096,
           lng: 100.752254
         }
       ];
       $scope.mrtCoords = [
         {
-          title: 'Hua Lamphong',
+          title: 'Hua Lamphong Station',
           lat: 13.737719, 
           lng: 100.516851
         },
         {
-          title: 'Samyan',
+          title: 'Samyan Station',
           lat: 13.732378, 
           lng: 100.529960
         },
         {
-          title: 'Si Lom',
+          title: 'Si Lom Station',
           lat: 13.729500, 
           lng: 100.536609
         },
         {
-          title: 'Lumphini',
+          title: 'Lumphini Station',
           lat: 13.726110, 
           lng: 100.544897
         },
         {
-          title: 'Khlong Toei',
+          title: 'Khlong Toei Station',
           lat: 13.722437, 
           lng: 100.553717
         },
@@ -604,7 +604,7 @@
           lng: 100.559040
         },
         {
-          title: 'Queen Sirikit National Convention Centre',
+          title: 'Queen Sirikit National Convention Centre Station',
           lat: 13.723621, 
           lng: 100.560436
         },
@@ -617,17 +617,17 @@
           lng: 100.561058
         },
         {
-          title: 'Sukhumvit',
+          title: 'Sukhumvit Station',
           lat: 13.738510, 
           lng: 100.561651
         },
         {
-          title: 'Phetchaburi',
+          title: 'Phetchaburi Station',
           lat: 13.748536, 
           lng: 100.563267
         },
         {
-          title: 'Phra Ram 9',
+          title: 'Phra Ram 9 Station',
           lat: 13.757714, 
           lng: 100.565378
         },
@@ -636,7 +636,7 @@
           lng: 100.566326
         },
         {
-          title: 'Thailand Cultural Centre',
+          title: 'Thailand Cultural Centre Station',
           lat: 13.767363, 
           lng: 100.571201
         },
@@ -645,17 +645,17 @@
           lng: 100.573140
         },
         {
-          title: 'Huai Khwang',
+          title: 'Huai Khwang Station',
           lat: 13.779030, 
           lng: 100.573684
         },
         {
-          title: 'Sutthisan',
+          title: 'Sutthisan Station',
           lat: 13.789004, 
           lng: 100.574126
         },
         {
-          title: 'Ratchadaphisek',
+          title: 'Ratchadaphisek Station',
           lat: 13.799135, 
           lng: 100.574609
         },
@@ -664,12 +664,12 @@
           lng: 100.574875
         },
         {
-          title: 'Lat Phrao',
+          title: 'Lat Phrao Station',
           lat: 13.806183, 
           lng: 100.573545
         },
         {
-          title: 'Phahon Yothin',
+          title: 'Phahon Yothin Station',
           lat: 13.813687, 
           lng: 100.559956
         },
@@ -678,89 +678,89 @@
           lng: 100.557785
         },
         {
-          title: 'Chatuchak Park',
+          title: 'Chatuchak Park Station',
           lat: 13.803855, 
           lng: 100.554046
         }
       ];
       $scope.mrtStationsCoords = [
         {
-          title: 'Hua Lamphong',
+          title: 'Hua Lamphong Station',
           lat: 13.737719, 
           lng: 100.516851
         },
         {
-          title: 'Samyan',
+          title: 'Samyan Station',
           lat: 13.732378, 
           lng: 100.529960
         },
         {
-          title: 'Si Lom',
+          title: 'Si Lom Station',
           lat: 13.729500, 
           lng: 100.536609
         },
         {
-          title: 'Lumphini',
+          title: 'Lumphini Station',
           lat: 13.726110, 
           lng: 100.544897
         },
         {
-          title: 'Khlong Toei',
+          title: 'Khlong Toei Station',
           lat: 13.722437, 
           lng: 100.553717
         },
         {
-          title: 'Queen Sirikit National Convention Centre',
+          title: 'Queen Sirikit National Convention Centre Station',
           lat: 13.723621, 
           lng: 100.560436
         },
         {
-          title: 'Sukhumvit',
+          title: 'Sukhumvit Station',
           lat: 13.738510, 
           lng: 100.561651
         },
         {
-          title: 'Phetchaburi',
+          title: 'Phetchaburi Station',
           lat: 13.748536, 
           lng: 100.563267
         },
         {
-          title: 'Phra Ram 9',
+          title: 'Phra Ram 9 Station',
           lat: 13.757714, 
           lng: 100.565378
         },
         {
-          title: 'Thailand Cultural Centre',
+          title: 'Thailand Cultural Centre Station',
           lat: 13.767363, 
           lng: 100.571201
         },
         {
-          title: 'Huai Khwang',
+          title: 'Huai Khwang Station',
           lat: 13.779030, 
           lng: 100.573684
         },
         {
-          title: 'Sutthisan',
+          title: 'Sutthisan Station',
           lat: 13.789004, 
           lng: 100.574126
         },
         {
-          title: 'Ratchadaphisek',
+          title: 'Ratchadaphisek Station',
           lat: 13.799135, 
           lng: 100.574609
         },
         {
-          title: 'Lat Phrao',
+          title: 'Lat Phrao Station',
           lat: 13.806183, 
           lng: 100.573545
         },
         {
-          title: 'Phahon Yothin',
+          title: 'Phahon Yothin Station',
           lat: 13.813687, 
           lng: 100.559956
         },
         {
-          title: 'Chatuchak Park',
+          title: 'Chatuchak Park Station',
           lat: 13.803855, 
           lng: 100.554046
         }
@@ -768,62 +768,62 @@
       $scope.brtCoords = [];
       $scope.brtStationsCoords = [
         {
-          title: 'Ratchaphruek',
+          title: 'Ratchaphruek Station',
           lat: 13.716073, 
           lng: 100.479228
         },
         {
-          title: 'Rama III Bridge',
+          title: 'Rama III Bridge Station',
           lat: 13.693729, 
           lng: 100.500241
         },
         {
-          title: 'Charoenrat',
+          title: 'Charoenrat Station',
           lat: 13.690060, 
           lng: 100.504618
         },
         {
-          title: 'Rama IX Bridge',
+          title: 'Rama IX Bridge Station',
           lat: 13.688184, 
           lng: 100.515519
         },
         {
-          title: 'Wat Dokmai',
+          title: 'Wat Dokmai Station',
           lat: 13.682346, 
           lng: 100.525518
         },
         {
-          title: 'Wat Priwat',
+          title: 'Wat Priwat Station',
           lat: 13.674548, 
           lng: 100.534659
         },
         {
-          title: 'Wat Dan',
+          title: 'Wat Dan Station',
           lat: 13.674131, 
           lng: 100.543242
         },
         {
-          title: 'Nararam 3',
+          title: 'Nararam 3 Station',
           lat: 13.696398, 
           lng: 100.544959
         },
         {
-          title: 'Thanon Chan',
+          title: 'Thanon Chan Station',
           lat: 13.704861, 
           lng: 100.538822
         },
         {
-          title: 'Technic Krungthep',
+          title: 'Technic Krungthep Station',
           lat: 13.711991, 
           lng: 100.535303
         },
         {
-          title: 'Akhan Songkhro',
+          title: 'Akhan Songkhro Station',
           lat: 13.717119, 
           lng: 100.532599
         },
         {
-          title: 'Sathorn',
+          title: 'Sathorn Station',
           lat: 13.721372, 
           lng: 100.530668
         }
@@ -833,7 +833,7 @@
       .concat($scope.btsStationsCoords2)
       .concat($scope.mrtStationsCoords)
       .concat($scope.srtStationsCoords);
-      arrayUnique($scope.allStations);
+      $scope.allStations = arrayUnique($scope.allStations);
       $scope.search = function (searchText) {
         if (!searchText || searchText === '') {
           return;
