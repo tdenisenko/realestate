@@ -39,6 +39,7 @@
       //$scope.imageList = [];
       $scope.name = '';
       $scope.location = '';
+      $scope.price = '';
       $scope.limit = 10000;
       $scope.loading = true;
       $scope.listingFilter = 'rent,sale';
@@ -46,6 +47,78 @@
         isForRent: true,
         isForSale: true
       };
+      $scope.minPrice = '';
+      $scope.maxPrice = '';
+      $scope.beds = 0;
+      $scope.baths = 0;
+      $scope.minSize = '';
+      $scope.maxSize = '';
+      $scope.minYear = '';
+      $scope.maxYear = '';
+      $scope.moreOptions = {
+        bedOptions: 
+        [
+          {
+            label: '0+',
+            value: 0
+          },
+          {
+            label: '1+',
+            value: 1
+          },
+          {
+            label: '2+',
+            value: 2
+          },
+          {
+            label: '3+',
+            value: 3
+          },
+          {
+            label: '4+',
+            value: 4
+          },
+          {
+            label: '5+',
+            value: 5
+          },
+          {
+            label: '6+',
+            value: 6
+          }
+        ],
+        bathOptions: 
+        [
+          {
+            label: '0+',
+            value: 0
+          },
+          {
+            label: '1+',
+            value: 1
+          },
+          {
+            label: '2+',
+            value: 2
+          },
+          {
+            label: '3+',
+            value: 3
+          },
+          {
+            label: '4+',
+            value: 4
+          },
+          {
+            label: '5+',
+            value: 5
+          },
+          {
+            label: '6+',
+            value: 6
+          }
+        ]
+      }
       $scope.rentCount = 0;
       $scope.saleCount = 0;
       $scope.searchText = '';
@@ -869,6 +942,34 @@
           loading();
         });
       }
+      $scope.applyChanges = function() {
+        loading();
+        //Price check
+        if (!validate($scope.minPrice, 0, 100000000) || ($scope.maxPrice !== '' && $scope.minPrice > $scope.maxPrice)) {
+          $scope.minPrice = '';
+        }
+        if (!validate($scope.maxPrice, 0, 100000000) || ($scope.minPrice !== '' && $scope.maxPrice < $scope.minPrice)) {
+          $scope.maxPrice = '';
+        }
+        //Size check
+        if (!validate($scope.minSize, 0, 100000000) || ($scope.maxSize !== '' && $scope.minSize > $scope.maxSize)) {
+          $scope.minSize = '';
+        }
+        if (!validate($scope.maxSize, 0, 100000000) || ($scope.minSize !== '' && $scope.maxSize < $scope.minSize)) {
+          $scope.maxSize = '';
+        }
+        //Year check
+        if (!validate($scope.minYear, 1000, 2100) || ($scope.maxYear !== '' && $scope.minYear > $scope.maxYear)) {
+          $scope.minYear = '';
+        }
+        if (!validate($scope.maxYear, 1000, 2100) || ($scope.minYear !== '' && $scope.maxYear < $scope.minYear)) {
+          $scope.maxYear = '';
+        }
+        //console.log("changes applied");
+        $timeout(setMap, 1000).then(function() {
+          loading();
+        });
+      }
       $scope.zoomTo = function(type) {
         if (!(ctrl && ctrl.map)) {
           return;
@@ -903,6 +1004,11 @@
         }
       }
     }();
+
+    function validate(str, min, max) {
+      var n = parseFloat(str);
+      return (!isNaN(n) && n >= min && n <= max);
+    }
 
     function smoothZoom (map, max, cnt) {
         if (cnt >= max) {
@@ -1020,6 +1126,14 @@
       var frLng = fr.lng();
       var listingType = $scope.listingFilter; //'rent,sale';
       var propertyTypes = 'co,th,dh,ap';
+      var minPrice = $scope.minPrice === '' ? 0 : $scope.minPrice;
+      var maxPrice = $scope.maxPrice === '' ? 0 : $scope.maxPrice;
+      var beds = $scope.beds;
+      var baths = $scope.baths;
+      var minSize = $scope.minSize === '' ? 0 : $scope.minSize;
+      var maxSize = $scope.maxSize === '' ? 0 : $scope.maxSize;
+      var minYear = $scope.minYear === '' ? 0 : $scope.minYear;
+      var maxYear = $scope.maxYear === '' ? 0 : $scope.maxYear;
 
       var styles = [{
         url: 'img/m1.png',
@@ -1036,7 +1150,7 @@
         maxZoom: 15, 
         styles: styles
       };
-      condoApi.getCondoList(nlLat, nlLng, frLat, frLng, listingType, propertyTypes).then(function(condoList) {
+      condoApi.getCondoList(nlLat, nlLng, frLat, frLng, listingType, propertyTypes, minPrice, maxPrice, beds, baths, minSize, maxSize, minYear, maxYear).then(function(condoList) {
         //$scope.imageList = [];
         $scope.rentCount = 0;
         $scope.saleCount = 0;
@@ -1099,6 +1213,7 @@
         $scope.name = info.property_name;
         //$scope.location = info.location;
         $scope.location = capitalizeFirstLetter(info.property_type) + " - For " + capitalizeFirstLetter(info.listing_type);
+        $scope.price = info.details.listing_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         $scope.activeImage = info.images[0]; //'img/house.jpg';
         var source = '<div>'
                     + '<div class="info-container">'
@@ -1109,7 +1224,7 @@
                         + '<div class="col-xs-7 small-details-container">'
                           + '<div class="row">'
                             + '<div class="col-xs-12 condopricesmall">'
-                              + '$900/mo'
+                              + '&#3647;{{price}}'
                             + '</div>'
                           + '</div>'
                           + '<div class="row">'
@@ -1160,7 +1275,7 @@
       });
       return d.promise;
     }
-    function _getCondoList(nlLat, nlLng, frLat, frLng, listingType, propertyTypes) {
+    function _getCondoList(nlLat, nlLng, frLat, frLng, listingType, propertyTypes, minPrice, maxPrice, beds, baths, minSize, maxSize, minYear, maxYear) {
       var d = $q.defer();
       //$http.get('http://tfh.ladargroup.com/rest/search/condo?nl=13,100&fr=14,101').then(function(response) {
       $http.get('http://tfh.ladargroup.com/rest/search/property?nl=' 
@@ -1174,7 +1289,23 @@
                 + '&lt='
                 + listingType
                 + '&pt='
-                + propertyTypes).then(function(response) {
+                + propertyTypes
+                + '&price_min='
+                + minPrice
+                + '&price_max='
+                + maxPrice
+                + '&bed='
+                + beds
+                + '&bath='
+                + baths
+                + '&size_min='
+                + minSize
+                + '&size_max='
+                + maxSize
+                + '&year_min='
+                + minYear
+                + '&year_max='
+                + maxYear).then(function(response) {
         return d.resolve(response.data);
       });
       return d.promise;
