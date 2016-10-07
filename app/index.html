@@ -3,7 +3,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <script src="https://maps.google.com/maps/api/js?key=AIzaSyC9efZV5sak_Geyb6y7UMSfAaNt7fFUcfM"></script>
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyC9efZV5sak_Geyb6y7UMSfAaNt7fFUcfM&libraries=places"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="https://googlemaps.github.io/js-marker-clusterer/src/markerclusterer.js"></script>
@@ -31,7 +31,7 @@
           </div>
           <div class="row lower-half">
             
-            <div class="col-xs-2 searchbar">
+            <div class="col-xs-3 searchbar">
               <form class="navbar-form" role="search">
               <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term" autocomplete="off" ng-model="searchText" uib-typeahead="station.title for station in allStations | filter:$viewValue | limitTo:8">
@@ -41,7 +41,7 @@
               </div>
               </form>
             </div>
-            <div class="col-xs-2 header-tab listing-type" id="simple-dropdown" auto-close="outsideClick" uib-dropdown-toggle uib-dropdown dropdown-append-to-body="true">
+            <div class="col-xs-3 header-tab listing-type" id="simple-dropdown" auto-close="outsideClick" uib-dropdown-toggle uib-dropdown dropdown-append-to-body="true">
               LISTING TYPE <span class="caret"></span>
               <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
                 <li class="menuitem" role="menuitem"><label><input type="checkbox" ng-model="listingOptions.isForSale" ng-change="listingFilterChanged(listingOptions, 'sale')"> FOR SALE {{saleCount === 0 ? '' : '(' + saleCount + ')'}}</label></li>
@@ -49,19 +49,23 @@
                 <!-- <li class="divider"></li> -->
               </ul>
             </div>
-            <div class="col-xs-3 header-tab search-by">
+            <div class="col-xs-4 header-tab search-by">
               SEARCH BY <span><img class="header-img" src="img/bts.jpg" ng-click="zoomTo('bts')"></img></span> <span><img class="header-img" src="img/mrt.png" ng-click="zoomTo('mrt')"></img></span> <span><img class="header-img" src="img/arl.jpg" ng-click="zoomTo('arl')"></img></span>
             </div>
             <div class="col-xs-2 header-tab" id="simple-dropdown" auto-close="outsideClick" uib-dropdown-toggle uib-dropdown dropdown-append-to-body="true">
-              0+ BEDS <span class="caret"></span>
+              MORE <span class="caret"></span>
               <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
-                <!-- <li class="divider"></li> -->
-              </ul>
-            </div>
-            <div class="col-xs-2 header-tab" id="simple-dropdown" auto-close="outsideClick" uib-dropdown-toggle uib-dropdown dropdown-append-to-body="true">
-              HOME TYPE <span class="caret"></span>
-              <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
-                <!-- <li class="divider"></li> -->
+                <div class="row">
+                  <div class="col-xs-3">
+                    <label class="filterlabel">Price</label>
+                  </div>
+                  <div class="col-xs-3">
+                    <input placeholder="Min Price" type="text" ng-model="listingOptions.minPrice" ng-change="listingFilterChanged(listingOptions, 'minPrice')">
+                  </div>
+                  <div class="col-xs-3">
+                    <input placeholder="Max Price" type="text" ng-model="listingOptions.maxPrice" ng-change="listingFilterChanged(listingOptions, 'maxPrice')">
+                  </div>
+                </div>
               </ul>
             </div>
           </div>
@@ -82,6 +86,26 @@
           </div>
           -->
         </div>
+        <!--
+        <div class="filters row">
+          <div class="col-xs-1">
+          </div>
+          <div class="filter col-xs-2">
+            HOUSES FOR YOU
+          </div>
+          <div class="filter col-xs-2">
+            NEWEST
+          </div>
+          <div class="filter col-xs-2">
+            CHEAPEST
+          </div>
+          <div class="filter col-xs-2">
+            MORE
+          </div>
+          <div class="col-xs-2">
+          </div>
+        </div>
+        -->
         <div class="details-container-left">
           <!-- ng-style="{'background-image':'linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25)), url('+imageList[$index]+')'}" -->
           <!-- back-img="{{imageList[$index]}}" -->
